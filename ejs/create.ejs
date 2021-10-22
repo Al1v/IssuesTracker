@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs'); %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs'); %>
+    <form action="/create", method="POST">
+    <h2>create todo</h2>
+     <div class="input-field">
+       <input type = 'text' name = 'title'>
+          <label>Todo title</label>
+     </div>
+     <button type = 'submit' class="btn">create</button>
+    </form>
+
+    
+</body>
+</html>

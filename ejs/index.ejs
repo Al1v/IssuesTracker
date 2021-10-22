@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs'); %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs'); %>
+    <div class="container"><h1>
+          <% if(todos.length){ %>
+            <ul>
+                <% for(let i of todos ){ %>
+       
+                <li class = 'todo'>
+                    <form action="/complete" method="POST">
+                    <label>
+                        <%if(i.completed ){%>
+                            <input type="checkbox" checked name="completed">
+                            <span class = 'completed'><%= i.title %></span>
+                          <%}else{%>
+                            <input type="checkbox" name="completed">
+                            <span><%= i.title %></span>   
+                          <% } %>
+                          <input type="hidden" value= <%=i.id%> name = 'id'> >
+                          <button class="btn btn-small" type="submit">Save</button>
+                    </label>
+                </form>
+                </li>
+                <% } %>
+            </ul>
+          <% } else{ %>  
+              No todos
+
+          <% } %>
+    
+    </h1></div>
+    
+</body>
+</html>

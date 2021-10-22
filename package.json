@@ -1,0 +1,25 @@
+{
+  "name": "exprss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "github:types/express",
+    "body": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11",
+    "nodemon": "^2.0.13",
+    "parser": "^0.1.4",
+    "path": "^0.12.7"
+  }
+}
