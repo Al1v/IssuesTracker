@@ -1,19 +1,14 @@
 
   <nav class = 'blue darken-4'>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">My page</a>
+      <a href="/" class="brand-logo">Issues tracker</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if(active === 'main'){ %>
-          <li class = 'active'><a  href="/" >todos</a></li>
-        <% } else{ %>  
-          <li><a href="/">todos</a></li>
-        <% } %>
+        
+          
+          <li><a href="/">Issues</a></li>
+          <li><a href="/create">Create</a></li>
+          <li><a href="/notes">Notes</a></li>
 
-        <% if(active === 'create'){ %>
-          <li class = 'active'><a  href="/create">create</a></li>
-        <% } else{ %>  
-          <li><a href="/create">create</a></li>
-        <% } %>
       
       </ul>
     </div>

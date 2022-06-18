@@ -5,9 +5,14 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    completed:{
-        type: Boolean,
-        default: false
+    state:{
+        type: String,
+        required: true,
+        default: "open",
+    },
+    description:{
+        type: String,
+        required: true,
     }
 });
 

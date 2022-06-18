@@ -6,13 +6,22 @@
 <body>
     <%- include('./partials/navbar.ejs'); %>
     <form action="/create", method="POST">
-    <h2>create todo</h2>
+    <h2>create issue</h2>
      <div class="input-field">
-       <input type = 'text' name = 'title'>
-          <label>Todo title</label>
+       <input  placeholder = 'Issue title' type = 'text'  name = 'title'>
+
      </div>
+     <div class="input-field">
+        <input  placeholder = 'Issue description' type = 'text'  name = 'description'>
+
+      </div>
      <button type = 'submit' class="btn">create</button>
     </form>
+    <div>
+        <% if(errMsg){ %>
+        <h6 class = 'red-text'><%= errMsg %></h6>  
+            <%}%>
+    </div>
 
     
 </body>

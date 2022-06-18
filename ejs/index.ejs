@@ -11,24 +11,48 @@
                 <% for(let i of todos ){ %>
        
                 <li class = 'todo'>
-                    <form action="/complete" method="POST">
+                    
+
+                    <form action="/change" method="POST">
+                    <div class="row">
                     <label>
-                        <%if(i.completed ){%>
-                            <input type="checkbox" checked name="completed">
-                            <span class = 'completed'><%= i.title %></span>
-                          <%}else{%>
-                            <input type="checkbox" name="completed">
-                            <span><%= i.title %></span>   
+                        
+                        <%if(i.state == 'completed' ){%>
+
+                            <span class = 'completed col s2' ><h5><%= i.title %></h5></span>
+                            <span class = "col s12"><%= i.description %></span>   
+                            <span class = "col s1 green-text"><h6><%= i.state %></h6></span> 
+                            <input type = "hidden" value= <%=i.id%> name = 'id'> 
+                            <button class = "btn btn-small disabled col s1" type="submit">completed</button>
+
+                          <%}else if(i.state == 'pending'){%>
+
+                            <span class = 'col s2' ><h5><%= i.title %></h5></span>
+                            <span class = "col s12"><%= i.description %></span>   
+                            <span class = "col s1 orange-text"><h6><%= i.state %></h6></span> 
+                            <input type="hidden" value= <%=i.id%> name = 'id'> 
+                            <button class="btn btn-small">Resolve</button>
+                            
+                          <% }else{ %>
+    
+                            <span class = 'col s2' ><h5><%= i.title %></h5></span>
+                            <span class = "col s12"><%= i.description %></span>     
+                            <span class = "col s1 blue-text"><h6><%= i.state %></h6></span> 
+                            <input type="hidden" value= <%=i.id%> name = 'id'> 
+                            <button class="btn btn-small">Start</button>%>
+
                           <% } %>
-                          <input type="hidden" value= <%=i.id%> name = 'id'> >
-                          <button class="btn btn-small" type="submit">Save</button>
-                    </label>
+                       
+                         </label>
+                    </div>
                 </form>
+              
                 </li>
                 <% } %>
             </ul>
           <% } else{ %>  
-              No todos
+            
+              No issues
 
           <% } %>
     
