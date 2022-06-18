@@ -15,6 +15,5 @@ router.get('/notes', controller.getNotes);
 router.post('/create', urlencodedParser, controller.postCreate);
 router.post('/change', urlencodedParser, controller.postCreate);
 
-   
 module.exports = router;
  

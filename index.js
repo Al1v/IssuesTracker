@@ -1,14 +1,16 @@
-
+if (process.env.NODE_ENV !== 'production'){
+  require('dotenv').config()//if not in production, parse vars from .env
+}
 const ejs = require('ejs');
 const serverRoutes = require('./routes/server.js');
 const express = require('express');
 const path = require('path');
 const mongoose = require ('mongoose');
-require('dotenv').config()
+
 
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(serverRoutes);
@@ -27,7 +29,7 @@ start();
             useNewUrlParser: true,
 
         });
-        app.listen(PORT, () => {
+        app.listen(process.env.PORT || 80, () => {
             console.log('server started');
         });
 
