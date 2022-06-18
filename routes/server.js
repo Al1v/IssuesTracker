@@ -13,7 +13,7 @@ router.get('/', controller.getIssues);
 router.get('/create', controller.getCreate);
 router.get('/notes', controller.getNotes);
 router.post('/create', urlencodedParser, controller.postCreate);
-router.post('/change', urlencodedParser, controller.postCreate);
+router.post('/change', urlencodedParser, controller.postChange);
 
 module.exports = router;
  
